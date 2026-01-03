@@ -113,7 +113,7 @@ textarea {
     <h1>Write ur wishes for the year</h1>
     <textarea id="wishText" placeholder="Type ur wishes here..." rows="6"></textarea>
     <br>
-    <button onclick="downloadWish()">Send</button>
+    <button onclick="sendEmail()">Send</button>
     <button onclick="nextPage()">Next</button>
     <button onclick="prevPage()">Previous</button>
   </div>
@@ -129,7 +129,10 @@ textarea {
 
 </div>
 
+<script src="https://cdn.jsdelivr.net/npm/emailjs-com@3/dist/email.min.js"></script>
 <script>
+emailjs.init('service_v60c5va'); // ضع هنا Service ID تبعك
+
 let currentPage = 1;
 function showPage(num) {
   document.getElementById("page1").style.display = "none";
@@ -153,16 +156,16 @@ function toggleAudio() {
   }
 }
 
-function downloadWish() {
-  const text = document.getElementById('wishText').value;
-  if(text.trim() === "") { alert("u didnt write anything lol"); return; }
-  const blob = new Blob([text], {type:"text/plain"});
-  const link = document.createElement("a");
-  link.href = URL.createObjectURL(blob);
-  link.download = "Eya_wishes.txt";
-  document.body.appendChild(link);
-  link.click();
-  document.body.removeChild(link);
+// دالة جديدة لإرسال البريد
+function sendEmail() {
+  const text = document.getElementById('wishText').value.trim();
+  if(text === "") { 
+    alert("Please write something!"); 
+    return; 
+  }
+  emailjs.send('service_v60c5va', 'template_v60c5va', { message: text })
+    .then(() => alert("Message sent!"))
+    .catch(err => alert("Error sending message: " + err));
 }
 
 showPage(1);
