@@ -1,10 +1,9 @@
 <!DOCTYPE html>
 <html lang="en" dir="ltr">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Happy Birthday Aya 🎂</title>
-
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Birthday Gift Aya 🎂</title>
   <style>
     body {
       margin: 0;
@@ -13,7 +12,6 @@
       color: #eaeaea;
       transition: background-position 0.1s ease;
     }
-
     .container {
       min-height: 100vh;
       display: flex;
@@ -21,147 +19,132 @@
       justify-content: center;
       padding: 20px;
     }
-
     .card {
       background: rgba(25, 25, 25, 0.92);
-      max-width: 650px;
+      max-width: 700px;
       width: 100%;
       border-radius: 24px;
-      padding: 35px;
+      padding: 40px 35px;
       box-shadow: 0 20px 40px rgba(0,0,0,0.6);
       text-align: center;
       animation: fadeIn 1.5s ease;
-    }
-
-    h1 {
-      font-size: 2.3rem;
-      margin-bottom: 8px;
-    }
-
-    h2 {
-      font-weight: normal;
-      color: #aaa;
-      margin-bottom: 28px;
-    }
-
-    p {
-      font-size: 1.05rem;
-      line-height: 1.9;
-      margin-bottom: 22px;
-      color: #ddd;
-    }
-
-    .divider {
-      height: 1px;
-      background: linear-gradient(to right, transparent, #555, transparent);
-      margin: 30px 0;
-    }
-
-    .interactive .question {
-      font-weight: 600;
-      margin-bottom: 10px;
-    }
-
-    .interactive .thinking {
-      font-style: italic;
-      color: #bbb;
-      margin-bottom: 18px;
-    }
-
-    .interactive button {
-      background: #eaeaea;
-      color: #111;
-      border: none;
-      padding: 10px 20px;
-      border-radius: 20px;
-      cursor: pointer;
-      font-size: 0.9rem;
-    }
-
-    .interactive button:hover {
-      opacity: 0.85;
-    }
-
-    .hidden {
       display: none;
     }
-
-    .answer {
-      margin-top: 18px;
-      color: #ccc;
+    h1 { font-size: 2.3rem; margin-bottom: 12px; }
+    p { font-size: 1.05rem; line-height: 1.8; margin: 20px 0; color: #ddd; }
+    button {
+      padding: 12px 25px;
+      border-radius: 25px;
+      border: none;
+      cursor: pointer;
+      font-size: 1rem;
+      margin: 10px;
+      box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+      transition: all 0.2s ease;
     }
-
-    .footer {
-      margin-top: 32px;
-      font-size: 0.9rem;
-      color: #888;
+    button:hover {
+      transform: scale(1.05);
+      box-shadow: 0 8px 20px rgba(0,0,0,0.5);
     }
-
+    textarea {
+      width: 90%;
+      padding: 10px;
+      border-radius: 10px;
+      font-size: 1rem;
+      margin-bottom: 15px;
+    }
+    .footer { margin-top: 32px; font-size: 0.9rem; color: #888; }
     @keyframes fadeIn {
-      from { opacity: 0; transform: translateY(20px); }
-      to { opacity: 1; transform: translateY(0); }
+      from { opacity: 0; transform: translateY(20px);}
+      to { opacity: 1; transform: translateY(0);}
     }
+    /* ألوان الصفحة الثالثة مختلفة قليلاً */
+    #page3 .card { background: rgba(15, 15, 40, 0.92); }
   </style>
 </head>
-
 <body>
-  <div class="container">
-    <div class="card">
-      <h1>🎉 Happy Birthday, Aya 🎉</h1>
-      <h2>This is for you</h2>
 
-      <p>
-        Some people pass through life quietly, and some leave a trace without even trying.
-        You are the kind of person whose presence makes moments feel lighter
-        and more meaningful.
-      </p>
+<div class="container">
 
-      <p>
-        I wanted this gift to be different — not something big, not something expensive —
-        but something honest. Something that says: you matter,
-        and you are appreciated more than you might realize.
-      </p>
-
-      <p>
-        I hope this new year brings you calm mornings, genuine smiles,
-        and the kind of growth that feels right for your soul.
-        Never forget that your kindness, your thoughts,
-        and your heart are enough — exactly as they are.
-      </p>
-
-      <div class="divider"></div>
-
-      <div class="interactive">
-        <p class="question">Before you leave, think about this:</p>
-        <p class="thinking">
-          Have you ever realized how much calm and positivity
-          you bring into a room — without even trying?
-        </p>
-
-        <button onclick="reveal()">I never thought about it</button>
-
-        <p id="answer" class="answer hidden">
-          That quiet effect you have on people is rare.
-          And it matters more than you think.
-        </p>
-      </div>
-
-      <div class="footer">
-        — Someone who genuinely wishes you well
-      </div>
-    </div>
+  <!-- الصفحة الأولى -->
+  <div class="card" id="page1">
+    <h1>🎉 Happy Birthday Aya 🎉</h1>
+    <p>
+      I wish u days that feel lighter calmer & more honest with u
+      I want u to know this clearly u matter to me more than u probably think
+      I really care about u even if I dont always show it the right way
+      I know I can look careless sometimes but the truth is I overthink everything especially the people I care about
+      Maybe we’re not as close as we used to be
+      Still I keep telling myself that things will be okay somehow
+      U r genuinely special
+      Different Rare
+      At some point I realized that I found my second half someone who fills a space I didnt even know was empty
+      I still dream that one day we’ll go on an adventure together exactly like the one I saw in my dream
+      And no dont worry I wont disappear again
+      I’ll keep annoying u with my messages until u hate them so much that u block me Fair deal
+      I hope this year brings u closer to ur dreams ur goals & the life u actually want
+      And I hope anyone who tries to fool u hurt u or waste ur energy completely fails
+      I’m not romantic u know that so yeah lol
+      But this This is real
+    </p>
+    <button onclick="nextPage()">Next</button>
   </div>
 
-  <script>
-    function reveal() {
-      document.getElementById("answer").classList.remove("hidden");
-    }
+  <!-- الصفحة الثانية -->
+  <div class="card" id="page2">
+    <h1>Write ur wishes for the year</h1>
+    <textarea id="wishText" placeholder="Type ur wishes here..." rows="6"></textarea>
+    <br>
+    <button onclick="downloadWish()">Send</button>
+    <button onclick="prevPage()">Previous</button>
+  </div>
 
-    document.addEventListener("mousemove", (e) => {
-      const x = (e.clientX / window.innerWidth) * 20 - 10;
-      const y = (e.clientY / window.innerHeight) * 20 - 10;
-      document.body.style.backgroundPosition = `${50 + x}% ${50 + y}%`;
-    });
-  </script>
+  <!-- الصفحة الثالثة -->
+  <div class="card" id="page3">
+    <h1>🎵 Just Listen 🎵</h1>
+    <p>some feelings sound better than words</p>
+    <button onclick="playAudio()">▶ Play Music</button>
+    <button onclick="prevPage()">Previous</button>
+    <audio id="mySong" src="did_i_tell_u_that_i_miss_u.mp3"></audio>
+    <div class="footer">— A moment for u</div>
+  </div>
+
+</div>
+
+<script>
+  let currentPage = 1
+
+  function showPage(num) {
+    document.getElementById("page1").style.display = "none"
+    document.getElementById("page2").style.display = "none"
+    document.getElementById("page3").style.display = "none"
+    document.getElementById("page"+num).style.display = "block"
+    currentPage = num
+  }
+
+  function nextPage() { if(currentPage < 3) showPage(currentPage+1) }
+  function prevPage() { if(currentPage > 1) showPage(currentPage-1) }
+
+  // تشغيل الأغنية
+  const audio = document.getElementById('mySong')
+  function playAudio() { audio.play() }
+
+  // تحميل النص كملف TXT مباشرة
+  function downloadWish() {
+    const text = document.getElementById('wishText').value
+    if(text.trim() === "") return
+    const blob = new Blob([text], {type:"text/plain"})
+    const link = document.createElement("a")
+    link.href = URL.createObjectURL(blob)
+    link.download = "Aya_wishes.txt"
+    document.body.appendChild(link)
+    link.click()
+    document.body.removeChild(link)
+  }
+
+  // بداية الموقع نظهر الصفحة الأولى
+  showPage(1)
+</script>
+
 </body>
 </html>
