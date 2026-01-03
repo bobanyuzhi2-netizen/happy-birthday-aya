@@ -1,153 +1,172 @@
-<!DOCTYPE html>  <html lang="en" dir="ltr">  
-<head>  
-<meta charset="UTF-8" />  
-<meta name="viewport" content="width=device-width, initial-scale=1.0" />  
-<title>Birthday Gift Aya 🎂</title>  
-<style>  
-body {  
-  margin: 0;  
-  font-family: 'Segoe UI', Tahoma, sans-serif;  
-  background: radial-gradient(circle at center, #2b2b2b, #0f0f0f);  
-  color: #eaeaea;  
-  transition: background-position 0.1s ease;  
-}  .container {
-min-height: 100vh;
-display: flex;
-align-items: center;
-justify-content: center;
-padding: 20px;
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Nova</title>
+<style>
+body {
+  margin: 0;
+  font-family: 'Segoe UI', Tahoma, sans-serif;
+  background: radial-gradient(circle at center, #2b2b2b, #0f0f0f);
+  color: #eaeaea;
+  transition: background-position 0.1s ease;
+}
+
+.container {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
 }
 
 .card {
-background: rgba(25, 25, 25, 0.92);
-max-width: 700px;
-width: 100%;
-border-radius: 24px;
-padding: 40px 35px;
-box-shadow: 0 20px 40px rgba(0,0,0,0.6);
-text-align: center;
-animation: fadeIn 1.5s ease;
-display: none;
+  background: rgba(25, 25, 25, 0.92);
+  max-width: 700px;
+  width: 100%;
+  border-radius: 24px;
+  padding: 40px 35px;
+  box-shadow: 0 20px 40px rgba(0,0,0,0.6);
+  text-align: center;
+  animation: fadeIn 1.5s ease;
+  display: none;
 }
 
 h1 {
-font-size: 2.3rem;
-margin-bottom: 12px;
+  font-size: 2.3rem;
+  margin-bottom: 12px;
 }
 
 p {
-font-size: 1.05rem;
-line-height: 1.8;
-margin: 20px 0;
-color: #ddd;
+  font-size: 1.05rem;
+  line-height: 1.8;
+  margin: 20px 0;
+  color: #ddd;
 }
 
 button {
-padding: 12px 25px;
-border-radius: 25px;
-border: none;
-cursor: pointer;
-font-size: 1rem;
-margin: 10px;
-box-shadow: 0 5px 15px rgba(0,0,0,0.3);
-transition: all 0.2s ease;
+  padding: 12px 25px;
+  border-radius: 25px;
+  border: none;
+  cursor: pointer;
+  font-size: 1rem;
+  margin: 10px;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+  transition: all 0.2s ease;
 }
 
 button:hover {
-transform: scale(1.05);
-box-shadow: 0 8px 20px rgba(0,0,0,0.5);
+  transform: scale(1.05);
+  box-shadow: 0 8px 20px rgba(0,0,0,0.5);
 }
 
 textarea {
-width: 90%;
-padding: 10px;
-border-radius: 10px;
-font-size: 1rem;
-margin-bottom: 15px;
+  width: 90%;
+  padding: 10px;
+  border-radius: 10px;
+  font-size: 1rem;
+  margin-bottom: 15px;
 }
 
 @keyframes fadeIn {
-from { opacity: 0; transform: translateY(20px);}
-to { opacity: 1; transform: translateY(0);}
+  from { opacity: 0; transform: translateY(20px);}
+  to { opacity: 1; transform: translateY(0);}
 }
 
 /* Page 3 slightly different background */
 #page3 .card {
-background: rgba(15, 15, 40, 0.92);
+  background: rgba(15, 15, 40, 0.92);
 }
 </style>
+</head>
+<body>
 
-</head>  
-<body>  <div class="container">    <!-- Page 1 -->    <div class="card" id="page1">  
-    <h1>🎉 Happy Birthday Aya 🎉</h1>  
-    <p>  
-      I wish u days that feel lighter calmer & more honest with u  
-      I want u to know this clearly u matter to me more than u probably think  
-      I really care about u even if I dont always show it the right way  
-      I know I can look careless sometimes but the truth is I overthink everything especially the people I care about  
-      Maybe we’re not as close as we used to be  
-      Still I keep telling myself that things will be okay somehow  
-      U r genuinely special  
-      Different Rare  
-      At some point I realized that I found my second half someone who fills a space I didnt even know was empty  
-      I still dream that one day we’ll go on an adventure together exactly like the one I saw in my dream  
-      And no dont worry I wont disappear again  
-      I’ll keep annoying u with my messages until u hate them so much that u block me Fair deal  
-      I hope this year brings u closer to ur dreams ur goals & the life u actually want  
-      And I hope anyone who tries to fool u hurt u or waste ur energy completely fails  
-      I’m not romantic u know that so yeah lol  
-      But this This is real  
-    </p>  
-    <button onclick="nextPage()">Next</button>  
-  </div>    <!-- Page 2 -->    <div class="card" id="page2">  
-    <h1>Write ur wishes for the year</h1>  
-    <textarea id="wishText" placeholder="Type ur wishes here..." rows="6"></textarea>  
-    <br>  
-    <button onclick="downloadWish()">Send</button>  
-    <button onclick="nextPage()">Next</button>  
-    <button onclick="prevPage()">Previous</button>  
-  </div>    <!-- Page 3 -->    <div class="card" id="page3">  
-    <h1>🎵 Just Listen 🎵</h1>  
-    <p>Hope u enjoy this one</p>  
-    <button id="audioBtn" onclick="toggleAudio()">Play Music</button>  
-    <button onclick="prevPage()">Previous</button>  
-    <audio id="mySong" src="did_i_tell_u_that_i_miss_u.mp3"></audio>  
-  </div>  </div>  <script>  
-let currentPage = 1;  
-function showPage(num) {  
-  document.getElementById("page1").style.display = "none";  
-  document.getElementById("page2").style.display = "none";  
-  document.getElementById("page3").style.display = "none";  
-  document.getElementById("page"+num).style.display = "block";  
-  currentPage = num;  
-}  
-function nextPage() { if(currentPage < 3) showPage(currentPage + 1) }  
-function prevPage() { if(currentPage > 1) showPage(currentPage - 1) }  
-  
-const audio = document.getElementById('mySong');  
-const audioBtn = document.getElementById('audioBtn');  
-function toggleAudio() {  
-  if(audio.paused) {  
-    audio.play();  
-    audioBtn.textContent = "Pause Music";  
-  } else {  
-    audio.pause();  
-    audioBtn.textContent = "Play Music";  
-  }  
-}  
-  
-function downloadWish() {  
-  const text = document.getElementById('wishText').value;  
-  if(text.trim() === "") { alert("u didnt write anything lol"); return; }  
-  const blob = new Blob([text], {type:"text/plain"});  
-  const link = document.createElement("a");  
-  link.href = URL.createObjectURL(blob);  
-  link.download = "Aya_wishes.txt";  
-  document.body.appendChild(link);  
-  link.click();  
-  document.body.removeChild(link);  
-}  
-  
-showPage(1);  
-</script>  </body>  
+<div class="container">
+
+  <!-- Page 1 -->
+  <div class="card" id="page1">
+    <h1>🎉 Happy Birthday Eya 🎉</h1>
+    <p>
+      I wish u days that feel lighter calmer & more honest with u
+      I want u to know this clearly u matter to me more than u probably think
+      I really care about u even if I dont always show it the right way
+      I know I can look careless sometimes but the truth is I overthink everything especially the people I care about
+      Maybe we’re not as close as we used to be
+      Still I keep telling myself that things will be okay somehow
+      U r genuinely special
+      Different Rare
+      At some point I realized that I found my second half someone who fills a space I didnt even know was empty
+      I still dream that one day we’ll go on an adventure together exactly like the one I saw in my dream
+      And no dont worry I wont disappear again
+      I’ll keep annoying u with my messages until u hate them so much that u block me Fair deal
+      I hope this year brings u closer to ur dreams ur goals & the life u actually want
+      And I hope anyone who tries to fool u hurt u or waste ur energy completely fails
+      I’m not romantic u know that so yeah lol
+      But this This is real
+    </p>
+    <button onclick="nextPage()">Next</button>
+  </div>
+
+  <!-- Page 2 -->
+  <div class="card" id="page2">
+    <h1>Write ur wishes for the year</h1>
+    <textarea id="wishText" placeholder="Type ur wishes here..." rows="6"></textarea>
+    <br>
+    <button onclick="downloadWish()">Send</button>
+    <button onclick="nextPage()">Next</button>
+    <button onclick="prevPage()">Previous</button>
+  </div>
+
+  <!-- Page 3 -->
+  <div class="card" id="page3">
+    <h1>🎵 Just Listen 🎵</h1>
+    <p>Hope u enjoy this one</p>
+    <button id="audioBtn" onclick="toggleAudio()">Play Music</button>
+    <button onclick="prevPage()">Previous</button>
+    <audio id="mySong" src="did_i_tell_u_that_i_miss_u.mp3"></audio>
+  </div>
+
+</div>
+
+<script>
+let currentPage = 1;
+function showPage(num) {
+  document.getElementById("page1").style.display = "none";
+  document.getElementById("page2").style.display = "none";
+  document.getElementById("page3").style.display = "none";
+  document.getElementById("page"+num).style.display = "block";
+  currentPage = num;
+}
+function nextPage() { if(currentPage < 3) showPage(currentPage + 1) }
+function prevPage() { if(currentPage > 1) showPage(currentPage - 1) }
+
+const audio = document.getElementById('mySong');
+const audioBtn = document.getElementById('audioBtn');
+function toggleAudio() {
+  if(audio.paused) {
+    audio.play();
+    audioBtn.textContent = "Pause Music";
+  } else {
+    audio.pause();
+    audioBtn.textContent = "Play Music";
+  }
+}
+
+function downloadWish() {
+  const text = document.getElementById('wishText').value;
+  if(text.trim() === "") { alert("u didnt write anything lol"); return; }
+  const blob = new Blob([text], {type:"text/plain"});
+  const link = document.createElement("a");
+  link.href = URL.createObjectURL(blob);
+  link.download = "Eya_wishes.txt";
+  document.body.appendChild(link);
+  link.click();
+  document.body.removeChild(link);
+}
+
+showPage(1);
+</script>
+
+</body>
 </html>
