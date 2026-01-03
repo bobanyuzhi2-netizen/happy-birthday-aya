@@ -1,63 +1,84 @@
 <!DOCTYPE html>
 <html lang="en" dir="ltr">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Birthday Gift Aya 🎂</title>
-  <style>
-    body {
-      margin: 0;
-      font-family: 'Segoe UI', Tahoma, sans-serif;
-      background: radial-gradient(circle at center, #2b2b2b, #0f0f0f);
-      color: #eaeaea;
-      transition: background-position 0.1s ease;
-    }
-    .container {
-      min-height: 100vh;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      padding: 20px;
-    }
-    .card {
-      background: rgba(25, 25, 25, 0.92);
-      max-width: 700px;
-      width: 100%;
-      border-radius: 24px;
-      padding: 40px 35px;
-      box-shadow: 0 20px 40px rgba(0,0,0,0.6);
-      text-align: center;
-      animation: fadeIn 1.5s ease;
-      display: none;
-    }
-    h1 { font-size: 2.3rem; margin-bottom: 12px; }
-    p { font-size: 1.05rem; line-height: 1.8; margin: 20px 0; color: #ddd; }
-    button {
-      padding: 12px 25px;
-      border-radius: 25px;
-      border: none;
-      cursor: pointer;
-      font-size: 1rem;
-      margin: 10px;
-      box-shadow: 0 5px 15px rgba(0,0,0,0.3);
-      transition: all 0.2s ease;
-    }
-    button:hover {
-      transform: scale(1.05);
-      box-shadow: 0 8px 20px rgba(0,0,0,0.5);
-    }
-    textarea {
-      width: 90%;
-      padding: 10px;
-      border-radius: 10px;
-      font-size: 1rem;
-      margin-bottom: 15px;
-    }
-    .footer { margin-top: 32px; font-size: 0.9rem; color: #888; }
-    @keyframes fadeIn { from { opacity: 0; transform: translateY(20px);} to { opacity: 1; transform: translateY(0);} }
-    /* Slightly different background for page 3 */
-    #page3 .card { background: rgba(15, 15, 40, 0.92); }
-  </style>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Birthday Gift Aya</title>
+<style>
+body {
+  margin: 0;
+  font-family: 'Segoe UI', Tahoma, sans-serif;
+  background: radial-gradient(circle at center, #2b2b2b, #0f0f0f);
+  color: #eaeaea;
+  transition: background-position 0.1s ease;
+}
+
+.container {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+}
+
+.card {
+  background: rgba(25, 25, 25, 0.92);
+  max-width: 700px;
+  width: 100%;
+  border-radius: 24px;
+  padding: 40px 35px;
+  box-shadow: 0 20px 40px rgba(0,0,0,0.6);
+  text-align: center;
+  animation: fadeIn 1.5s ease;
+  display: none;
+}
+
+h1 {
+  font-size: 2.3rem;
+  margin-bottom: 12px;
+}
+
+p {
+  font-size: 1.05rem;
+  line-height: 1.8;
+  margin: 20px 0;
+  color: #ddd;
+}
+
+button {
+  padding: 12px 25px;
+  border-radius: 25px;
+  border: none;
+  cursor: pointer;
+  font-size: 1rem;
+  margin: 10px;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+  transition: all 0.2s ease;
+}
+
+button:hover {
+  transform: scale(1.05);
+  box-shadow: 0 8px 20px rgba(0,0,0,0.5);
+}
+
+textarea {
+  width: 90%;
+  padding: 10px;
+  border-radius: 10px;
+  font-size: 1rem;
+  margin-bottom: 15px;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(20px);}
+  to { opacity: 1; transform: translateY(0);}
+}
+
+/* Page 3 slightly different background */
+#page3 .card {
+  background: rgba(15, 15, 40, 0.92);
+}
+</style>
 </head>
 <body>
 
@@ -65,7 +86,7 @@
 
   <!-- Page 1 -->
   <div class="card" id="page1">
-    <h1>🎉 Happy Birthday Aya 🎉</h1>
+    <h1>Happy Birthday Aya</h1>
     <p>
       I wish u days that feel lighter calmer & more honest with u
       I want u to know this clearly u matter to me more than u probably think
@@ -99,19 +120,17 @@
 
   <!-- Page 3 -->
   <div class="card" id="page3">
-    <h1>🎵 Just Listen 🎵</h1>
-    <p>Some feelings sound better than words</p>
-    <button onclick="playAudio()">▶ Play Music</button>
+    <h1>Just Listen</h1>
+    <p>Hope u enjoy this one</p>
+    <button id="audioBtn" onclick="toggleAudio()">Play Music</button>
     <button onclick="prevPage()">Previous</button>
     <audio id="mySong" src="did_i_tell_u_that_i_miss_u.mp3"></audio>
-    <div class="footer">— A moment for u</div>
   </div>
 
 </div>
 
 <script>
 let currentPage = 1;
-
 function showPage(num) {
   document.getElementById("page1").style.display = "none";
   document.getElementById("page2").style.display = "none";
@@ -119,13 +138,21 @@ function showPage(num) {
   document.getElementById("page"+num).style.display = "block";
   currentPage = num;
 }
-
 function nextPage() { if(currentPage < 3) showPage(currentPage + 1) }
 function prevPage() { if(currentPage > 1) showPage(currentPage - 1) }
 
-// Play audio
+// Toggle audio play/pause
 const audio = document.getElementById('mySong');
-function playAudio() { audio.play(); }
+const audioBtn = document.getElementById('audioBtn');
+function toggleAudio() {
+  if(audio.paused) {
+    audio.play();
+    audioBtn.textContent = "Pause Music";
+  } else {
+    audio.pause();
+    audioBtn.textContent = "Play Music";
+  }
+}
 
 // Download wishes as TXT
 function downloadWish() {
