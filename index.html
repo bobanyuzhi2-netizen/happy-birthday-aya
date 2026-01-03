@@ -113,7 +113,7 @@ textarea {
     <h1>Write ur wishes for the year</h1>
     <textarea id="wishText" placeholder="Type ur wishes here..." rows="6"></textarea>
     <br>
-    <button onclick="sendEmail()">Send</button>
+    <button onclick="sendFake()">Send</button>
     <button onclick="nextPage()">Next</button>
     <button onclick="prevPage()">Previous</button>
   </div>
@@ -129,10 +129,7 @@ textarea {
 
 </div>
 
-<script src="https://cdn.jsdelivr.net/npm/emailjs-com@3/dist/email.min.js"></script>
 <script>
-emailjs.init('service_v60c5va'); // ضع هنا Service ID تبعك
-
 let currentPage = 1;
 function showPage(num) {
   document.getElementById("page1").style.display = "none";
@@ -156,20 +153,20 @@ function toggleAudio() {
   }
 }
 
-// دالة جديدة لإرسال البريد
-function sendEmail() {
-  const text = document.getElementById('wishText').value.trim();
-  if(text === "") { 
-    alert("Please write something!"); 
-    return; 
+// صفحة 2 فقط - Fake send
+function sendFake() {
+  const textArea = document.getElementById('wishText');
+  const text = textArea.value.trim();
+  if(text === "") {
+    alert("Please write something!");
+    return;
   }
-  emailjs.send('service_v60c5va', 'template_v60c5va', { message: text })
-    .then(() => alert("Message sent!"))
-    .catch(err => alert("Error sending message: " + err));
+  alert("I won’t be able to see this");
+  textArea.value = ""; // يمسح النص بعد الضغط
 }
 
 showPage(1);
 </script>
 
 </body>
-</html>
+  </html>
