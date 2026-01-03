@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Happy Birthday Aya 🎂</title>
+
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Segoe UI', Tahoma, sans-serif;
+      background: radial-gradient(circle at center, #2b2b2b, #0f0f0f);
+      color: #eaeaea;
+      transition: background-position 0.1s ease;
+    }
+
+    .container {
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 20px;
+    }
+
+    .card {
+      background: rgba(25, 25, 25, 0.92);
+      max-width: 650px;
+      width: 100%;
+      border-radius: 24px;
+      padding: 35px;
+      box-shadow: 0 20px 40px rgba(0,0,0,0.6);
+      text-align: center;
+      animation: fadeIn 1.5s ease;
+    }
+
+    h1 {
+      font-size: 2.3rem;
+      margin-bottom: 8px;
+    }
+
+    h2 {
+      font-weight: normal;
+      color: #aaa;
+      margin-bottom: 28px;
+    }
+
+    p {
+      font-size: 1.05rem;
+      line-height: 1.9;
+      margin-bottom: 22px;
+      color: #ddd;
+    }
+
+    .divider {
+      height: 1px;
+      background: linear-gradient(to right, transparent, #555, transparent);
+      margin: 30px 0;
+    }
+
+    .interactive .question {
+      font-weight: 600;
+      margin-bottom: 10px;
+    }
+
+    .interactive .thinking {
+      font-style: italic;
+      color: #bbb;
+      margin-bottom: 18px;
+    }
+
+    .interactive button {
+      background: #eaeaea;
+      color: #111;
+      border: none;
+      padding: 10px 20px;
+      border-radius: 20px;
+      cursor: pointer;
+      font-size: 0.9rem;
+    }
+
+    .interactive button:hover {
+      opacity: 0.85;
+    }
+
+    .hidden {
+      display: none;
+    }
+
+    .answer {
+      margin-top: 18px;
+      color: #ccc;
+    }
+
+    .footer {
+      margin-top: 32px;
+      font-size: 0.9rem;
+      color: #888;
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(20px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+  </style>
+</head>
+
+<body>
+  <div class="container">
+    <div class="card">
+      <h1>🎉 Happy Birthday, Aya 🎉</h1>
+      <h2>This is for you</h2>
+
+      <p>
+        Some people pass through life quietly, and some leave a trace without even trying.
+        You are the kind of person whose presence makes moments feel lighter
+        and more meaningful.
+      </p>
+
+      <p>
+        I wanted this gift to be different — not something big, not something expensive —
+        but something honest. Something that says: you matter,
+        and you are appreciated more than you might realize.
+      </p>
+
+      <p>
+        I hope this new year brings you calm mornings, genuine smiles,
+        and the kind of growth that feels right for your soul.
+        Never forget that your kindness, your thoughts,
+        and your heart are enough — exactly as they are.
+      </p>
+
+      <div class="divider"></div>
+
+      <div class="interactive">
+        <p class="question">Before you leave, think about this:</p>
+        <p class="thinking">
+          Have you ever realized how much calm and positivity
+          you bring into a room — without even trying?
+        </p>
+
+        <button onclick="reveal()">I never thought about it</button>
+
+        <p id="answer" class="answer hidden">
+          That quiet effect you have on people is rare.
+          And it matters more than you think.
+        </p>
+      </div>
+
+      <div class="footer">
+        — Someone who genuinely wishes you well
+      </div>
+    </div>
+  </div>
+
+  <script>
+    function reveal() {
+      document.getElementById("answer").classList.remove("hidden");
+    }
+
+    document.addEventListener("mousemove", (e) => {
+      const x = (e.clientX / window.innerWidth) * 20 - 10;
+      const y = (e.clientY / window.innerHeight) * 20 - 10;
+      document.body.style.backgroundPosition = `${50 + x}% ${50 + y}%`;
+    });
+  </script>
+</body>
+</html>
