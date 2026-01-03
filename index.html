@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en" dir="ltr">
 <head>
-  <meta charset="UTF-8">
+  <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Birthday Gift Aya 🎂</title>
   <style>
@@ -54,11 +54,8 @@
       margin-bottom: 15px;
     }
     .footer { margin-top: 32px; font-size: 0.9rem; color: #888; }
-    @keyframes fadeIn {
-      from { opacity: 0; transform: translateY(20px);}
-      to { opacity: 1; transform: translateY(0);}
-    }
-    /* ألوان الصفحة الثالثة مختلفة قليلاً */
+    @keyframes fadeIn { from { opacity: 0; transform: translateY(20px);} to { opacity: 1; transform: translateY(0);} }
+    /* Slightly different background for page 3 */
     #page3 .card { background: rgba(15, 15, 40, 0.92); }
   </style>
 </head>
@@ -66,7 +63,7 @@
 
 <div class="container">
 
-  <!-- الصفحة الأولى -->
+  <!-- Page 1 -->
   <div class="card" id="page1">
     <h1>🎉 Happy Birthday Aya 🎉</h1>
     <p>
@@ -90,19 +87,20 @@
     <button onclick="nextPage()">Next</button>
   </div>
 
-  <!-- الصفحة الثانية -->
+  <!-- Page 2 -->
   <div class="card" id="page2">
     <h1>Write ur wishes for the year</h1>
     <textarea id="wishText" placeholder="Type ur wishes here..." rows="6"></textarea>
     <br>
     <button onclick="downloadWish()">Send</button>
+    <button onclick="nextPage()">Next</button>
     <button onclick="prevPage()">Previous</button>
   </div>
 
-  <!-- الصفحة الثالثة -->
+  <!-- Page 3 -->
   <div class="card" id="page3">
     <h1>🎵 Just Listen 🎵</h1>
-    <p>some feelings sound better than words</p>
+    <p>Some feelings sound better than words</p>
     <button onclick="playAudio()">▶ Play Music</button>
     <button onclick="prevPage()">Previous</button>
     <audio id="mySong" src="did_i_tell_u_that_i_miss_u.mp3"></audio>
@@ -112,38 +110,38 @@
 </div>
 
 <script>
-  let currentPage = 1
+let currentPage = 1;
 
-  function showPage(num) {
-    document.getElementById("page1").style.display = "none"
-    document.getElementById("page2").style.display = "none"
-    document.getElementById("page3").style.display = "none"
-    document.getElementById("page"+num).style.display = "block"
-    currentPage = num
-  }
+function showPage(num) {
+  document.getElementById("page1").style.display = "none";
+  document.getElementById("page2").style.display = "none";
+  document.getElementById("page3").style.display = "none";
+  document.getElementById("page"+num).style.display = "block";
+  currentPage = num;
+}
 
-  function nextPage() { if(currentPage < 3) showPage(currentPage+1) }
-  function prevPage() { if(currentPage > 1) showPage(currentPage-1) }
+function nextPage() { if(currentPage < 3) showPage(currentPage + 1) }
+function prevPage() { if(currentPage > 1) showPage(currentPage - 1) }
 
-  // تشغيل الأغنية
-  const audio = document.getElementById('mySong')
-  function playAudio() { audio.play() }
+// Play audio
+const audio = document.getElementById('mySong');
+function playAudio() { audio.play(); }
 
-  // تحميل النص كملف TXT مباشرة
-  function downloadWish() {
-    const text = document.getElementById('wishText').value
-    if(text.trim() === "") return
-    const blob = new Blob([text], {type:"text/plain"})
-    const link = document.createElement("a")
-    link.href = URL.createObjectURL(blob)
-    link.download = "Aya_wishes.txt"
-    document.body.appendChild(link)
-    link.click()
-    document.body.removeChild(link)
-  }
+// Download wishes as TXT
+function downloadWish() {
+  const text = document.getElementById('wishText').value;
+  if(text.trim() === "") { alert("u didnt write anything lol"); return; }
+  const blob = new Blob([text], {type:"text/plain"});
+  const link = document.createElement("a");
+  link.href = URL.createObjectURL(blob);
+  link.download = "Aya_wishes.txt";
+  document.body.appendChild(link);
+  link.click();
+  document.body.removeChild(link);
+}
 
-  // بداية الموقع نظهر الصفحة الأولى
-  showPage(1)
+// Show first page on load
+showPage(1);
 </script>
 
 </body>
